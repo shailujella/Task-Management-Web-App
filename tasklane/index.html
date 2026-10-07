@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tasklane</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside id="side"></aside>
+<main>
+<header class="top">
+<h1 id="title"></h1>
+<div class="tools">
+<input id="q" type="search" placeholder="Search tasks" aria-label="Search tasks">
+<select id="pf" aria-label="Filter by priority"><option value="">All priorities</option><option value="high">High</option><option value="med">Medium</option><option value="low">Low</option></select>
+<div class="seg" role="group" aria-label="View"><button id="vl">List</button><button id="vb">Board</button></div>
+<button class="btn" id="th" aria-label="Toggle theme">Theme</button>
+</div>
+</header>
+<section class="stats" id="stats"></section>
+<form class="quick" id="quick"><input id="qt" placeholder="What needs to be done?" aria-label="New task title" required><select id="qr" aria-label="Priority"><option value="med">Medium</option><option value="high">High</option><option value="low">Low</option></select><input id="qd" type="date" aria-label="Due date"><input id="qm" type="time" aria-label="Due time"><button class="btn pri">Add task</button></form>
+<div id="view"></div>
+</main>
+</div>
+<dialog id="dlg"><form id="f" method="dialog">
+<h2 id="dh">Edit task</h2>
+<label for="fT">Title</label><input id="fT" required>
+<label for="fN">Notes</label><textarea id="fN" rows="3"></textarea>
+<div class="two"><div><label for="fP">Project</label><select id="fP"></select></div><div><label for="fS">Status</label><select id="fS"><option value="todo">To do</option><option value="doing">In progress</option><option value="done">Done</option></select></div></div>
+<div class="three"><div><label for="fR">Priority</label><select id="fR"><option value="high">High</option><option value="med">Medium</option><option value="low">Low</option></select></div><div><label for="fD">Due date</label><input id="fD" type="date"></div><div><label for="fM">Due time</label><input id="fM" type="time"></div></div>
+<div class="acts"><button type="button" class="btn" id="del">Delete task</button><span><button type="button" class="btn" id="cn">Cancel</button> <button class="btn pri">Save task</button></span></div>
+</form></dialog>
+<div id="toast" role="status" hidden></div>
+<script src="script.js"></script>
+</body>
+</html>
